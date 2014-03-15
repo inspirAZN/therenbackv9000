@@ -51,11 +51,42 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+// static page routes
+app.get('/tutorial', function(req, res) {
+	res.sendfile('./static/tutorial.html');
+});
+app.get('/tutorial1', function(req, res) {
+	res.sendfile('./static/tutorial1.html');
+});
+app.get('/camera', function(req, res) {
+	res.sendfile('./static/camera.html');
+});
+app.get('/help', function(req, res) {
+	res.sendfile('./static/help.html');
+});
+app.get('/sethome', function(req, res) {
+	res.sendfile('./static/sethome.html');
+});
+app.get('/moments', function(req, res) {
+	res.sendfile('./static/moments.html');
+});
+app.get('/mymonets', function(req, res) {
+	res.sendfile('./static/mymoments.html');
+});
+app.get('/bank', function(req, res) {
+	res.sendfile('./static/bank.html');
+});
+app.get('/account', function(req, res) {
+	res.sendfile('./static/account.html');
+});
+app.get('/filler', function(req, res) {
+	res.sendfile('./static/filler.html');
+});
 
 
-app.get('/', routes.index);
-// app.get('/users', user.displayMoments);
-// app.get('/moments', moments.view);
+app.get('/', function(req, res) {
+	res.sendfile('./static/index.html');
+});
 
 // sign up
 app.get('/signup', signup.view);				// view page
@@ -70,18 +101,18 @@ app.get('/home', home.view);					// not logged in
 app.get('/home/:id', home.dashboard(db));			// user homepage
 
 // moments
-app.get('/moments', moments.view);
-app.get('/moments/:id', moments.displayMoments(db));
-app.get('/momentslist', moments.list(db));
+// app.get('/moments', moments.view);
+// app.get('/moments/:id', moments.displayMoments(db));
+// app.get('/momentslist', moments.list(db));
 
 // moments
-app.get('/mymoments', mymoments.view);
-app.get('/mymoments/:id', mymoments.displayMoments(db));
+// app.get('/mymoments', mymoments.view);
+// app.get('/mymoments/:id', mymoments.displayMoments(db));
 
 // camera
-app.get('/camera', camera.view);
-app.get('/camera/:id', camera.ready(db));
-app.post('/camera/post/:id', camera.postPic(db));
+// app.get('/camera', camera.view);
+// app.get('/camera/:id', camera.ready(db));
+// app.post('/camera/post/:id', camera.postPic(db));
 /// Show files
 app.get('/uploads/fullsize/:file', function (req, res){
 	file = req.params.file;
