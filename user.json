@@ -1,0 +1,20 @@
+{
+	"name": "Test",
+	"email": "test@test.com",
+	"password": "12345678",
+	"location": "San Diego",
+	"favorites": [{
+		"locationName": "Tokyo",
+		"imgsrc": "String",
+		"heart": ""
+	}],
+	"mymoments": [{
+		"locationName": "France",
+		"imgsrc": "img.jpg",
+		"heart": "-empty",
+		"numOfPhotos": "9",
+		"photos": [{
+			"imgsrc": "img2.jpg"
+		}]
+	}]
+}

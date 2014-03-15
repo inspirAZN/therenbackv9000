@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There and Back</title>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/styles.css" rel="stylesheet">
+</head>
+<body class="transparent cardboard-background">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar champagne_back"></span>
+                <span class="icon-bar champagne_back"></span>
+                <span class="icon-bar champagne_back"></span>
+            </button>
+            <a class="navbar-brand" href="/home"><span class="glyphicon glyphicon-send champagne"></span> MOMENTS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+                <li class="active"><a href="/home">home</a></li>
+                <li><a href="moments.html">postcards</a></li>
+                <li><a href="mymoments.html">my adventures</a></li>
+                <li><a href="favorites.html">favorites</a></li>
+                <li><a href="/account">my account</a></li>
+                <li><a href="/help">help</a></li>
+                <li><a href="/filler">sign out</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="container center-block">
+                    <div class="row no_bot_bord">
+                            <h1 class="allura asphault page-header">login</h1>
+                    </div>
+                    <div class="text-center">
+                      <div class="alert alert-warning">
+                        {{error}}
+                      </div>
+                    </div>
+                    <form id="login" role="form">
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                        <a id="loginBtn" class="btn btn-info pull-left" href="#">Login</a>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+</div>
+
+<!--  background-->
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="javascripts/bootstrap.js"></script>
+<script src="javascripts/jquery-2.0.3.js"></script>
+<script>
+
+    // loging
+
+    // bind the add button
+    $('#loginBtn').on('click', function validateUser(event) {
+          event.preventDefault();
+
+          console.log('here');
+
+          // Super basic validation - increase errorCount variable if any fields are blank
+          var errorCount = 0;
+          $('#login input').each(function(index, val) {
+            if($(this).val() === '') { errorCount++; }
+          });
+
+          // Check and make sure errorCount's still at zero
+          if(errorCount === 0) {
+
+            // If it is, compile all user info into one object
+            var checkUser = {
+              'name': $('#name').val(),
+              'password': $('#pass').val()
+            }
+
+            console.log(checkUser);
+
+            var url_call = '/login/';
+                url_call += $('#name').val();
+                url_call += '/';
+                url_call += $('#pass').val();
+
+            // Use AJAX to post the object to our adduser service
+            $.ajax({
+              type: 'POST',
+              data: checkUser,
+              url: url_call,
+              dataType: 'JSON'
+            }).done(function( response ) {
+                // Check for successful (blank) response
+                if (response.msg != 'the username or password is incorrect.') {
+
+                  // Clear the form inputs
+                  alert('success. redirecting to home');
+
+                  var userURL = '/home/';
+                      userURL += response.msg._id;
+                  
+                  window.location = userURL;
+                  } else {
+
+                  // If something goes wrong, alert the error message that our service returned
+                  alert('Error: ' + response.msg);
+
+                }
+            });
+          }
+          else {
+            // If errorCount is more than 0, error out
+            alert('Please fill in all fields');
+            return false;
+          }
+
+        });
+
+
+</script>
+<!-- <script src="javascripts/populateMoments.js"></script> -->
+    
+</body>
+</html>
+

@@ -1,0 +1,487 @@
+* {
+	margin: 0; padding: 0;
+}
+body {
+	text-align: center;
+	font: 12px Verdana;
+	color: #68645A;
+	background: #ffffff url(images/background.gif) repeat-x 0 0;
+}
+a {
+	color: #0089D2;
+}
+a:hover {
+	
+}
+img {
+	border: 0;
+}
+
+.break {
+	font-size: 0;
+	width: 0; height: 0;
+	clear: both;
+}
+.alignleft {
+	float: left;
+	margin: 4px 10px 5px 0;
+}
+.alignright {
+	float: right;
+	margin: 4px 0 5px 10px;
+}
+.aligncenter {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+
+/** BEGIN wrapper **/
+#wrapper {
+	width: 975px;
+	margin: auto auto;
+	text-align: left;
+	overflow: hidden;
+}
+/** END wrapper **/
+
+/** BEGIN header **/
+#header {
+	height: 180px;
+	margin-bottom: 15px;
+}
+	#header ol {
+		list-style-type: none;
+		float: left;
+	}
+		#header ol li {
+			float: left;
+			font-size: 0.9em;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding-left: 1px;
+			background: url(images/divider1.gif) no-repeat 0 center;
+		}
+		#header ol li a {
+			color: #ffffff;
+			text-decoration: none;
+			display: block;
+			padding: 8px 18px 9px;
+		}
+		#header ol li a:hover {
+			text-decoration: underline;
+		}
+		#header ol li.f {
+			padding-left: 0;
+			background: none;
+		}
+			#header ol li.f a {
+				padding-left: 0;
+			}
+	#header .links {
+		float: right;
+		font-size: 0.9em;
+		color: #ffffff;
+		padding: 8px 30px 9px;
+	}
+		#header .links a {
+			color: #ffffff;
+			text-decoration: none;
+			margin: 0 8px;
+		}
+		#header .links a:hover {
+			text-decoration: underline;
+		}
+	#header h1 {
+		clear: both;
+		float: left;
+		font-size: 0;
+		padding: 10px;
+	}
+		#header h1 a {
+			display: block;
+			width: 407px; height: 100px;
+			text-indent: -9999px;
+			outline: none;
+			background: url(images/logo.gif) no-repeat 0 0;
+		}
+	#header .ad {
+		float: right;
+		padding-top: 30px;
+	}
+	#header ul {
+		clear: both;
+		list-style-type: none;
+		height: 30px;
+		margin-left: -15px;
+	}
+		#header ul li {
+			float: left;
+			font-size: 0.9em;
+			font-weight: bold;
+			text-transform: uppercase;
+			padding-left: 2px;
+			background: url(images/divider2.gif) no-repeat 0 0;
+		}
+		#header ul li a {
+			display: block;
+			color: #808080;
+			text-decoration: none;
+			padding: 9px 15px 8px;
+		}
+		#header ul li a:hover {
+			color: #0089D2;
+		}
+/** END header **/
+
+/** BEGIN content **/
+#content {
+	width: 300px;
+	float: left;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+	#content .thumb {
+		width: 83px; height: 90px;
+		overflow: hidden;
+		float: left;
+		margin: 0 5px 5px 0;
+		border: 1px solid #CCCCCC;
+	}
+		#content .thumb img {
+			width: 100%;
+			height: 100%;
+		}
+	#content .post {
+		border: 1px solid #CCCCCC;
+		padding: 15px 20px;
+		margin-right: 10px;
+	}
+		#content .post h2 {
+			font-family: Georgia;
+			font-size: 2.5em;
+			font-weight: normal;
+			margin-bottom: 5px;
+		}
+			#content .post h2 a {
+				text-decoration: none;
+			}
+		#content .post .date {
+			font-size: 0.9em;
+			font-family: Georgia;
+			margin-bottom: 15px;
+		}
+			#content .post .date a {
+				text-decoration: none;
+			}
+			#content .post .date a:hover {
+				text-decoration: underline;
+			}
+		#content .post .details {
+			font-size: 0.9em;
+			font-family: Georgia;
+			margin-bottom: 15px;
+		}
+			#content .post .details .l {
+				float: left;
+			}
+			#content .post .details .r {
+				float: right;
+			}
+			#content .post .details a {
+				text-decoration: none;
+			}
+			#content .post .details a:hover {
+				text-decoration: underline;
+			}
+		#content .post p {
+			margin-bottom: 10px;
+			line-height: 1.4em;
+		}
+		#content .post ul, #content .post ol {
+			list-style-position: inside;
+			margin-bottom: 15px;
+		}
+		#content .post li {
+			line-height: 1.4em;
+		}
+		#content .post blockquote {
+			line-height: 1.4em;
+			margin-bottom: 15px;
+			padding: 10px 10px 0;
+			background-color: #eeeeee;
+			border-width: 1px 0;
+			border-color: #e0e0e0;
+			border-style: solid;
+		}
+		#content .post h3, #content .post h4, #content .post h5, #content .post h6 {
+			font-size: 1.4em;
+			margin-bottom: 5px;
+		}
+	#content .postnav {
+		clear: both;
+	}
+/** END content **/
+
+/** BEGIN sidebar **/
+#sidebar {
+	width: 302px;
+	float: right;
+	padding-bottom: 20px;
+}
+	#sidebar h2 {
+		font-size: 0.9em;
+		color: #ffffff;
+		background-color: #99CCFF;
+		text-transform: uppercase;
+		padding: 5px;
+		margin-bottom: 5px;
+	}
+	#sidebar ul {
+		list-style-type: none;
+		padding: 0 5px;
+	}
+		#sidebar ul li {
+			line-height: 1.4em;
+			padding: 4px 0;
+		}
+		#sidebar ul li a {
+			color: #68645A;
+			text-decoration: none;
+		}
+		#sidebar ul li a:hover {
+			color: #0089D2;
+			text-decoration: underline;
+		}
+	#sidebar .box {
+		border: 1px solid #CCCCCC;
+		margin-bottom: 15px;
+		padding: 5px 8px;
+	}
+	#sidebar .l {
+		float: left;
+		width: 145px;
+	}
+	#sidebar .r {
+		float: right;
+		width: 145px;
+	}
+		#sidebar .l li, #sidebar .r li {
+			font-size: 0.9em;
+		}
+	#sidebar .tags {
+		padding: 0 5px;
+	}
+		#sidebar .tags a {
+			color: #808080;
+			text-decoration: none;
+		}
+		#sidebar .tags a:hover {
+			color: #0089D2;
+			text-decoration: underline;
+		}
+	#sidebar .flickr {
+		text-align: center;
+	}
+		#sidebar .flickr img {
+			margin: 5px;
+		}
+	#sidebar form {
+		border: 1px solid #CCCCCC;
+		padding: 10px 5px;
+		background: url(images/search.gif) no-repeat 5px 10px;
+		height: 31px;
+	}
+		#sidebar form input {
+			float: left;
+			border: 0;
+			background-color: transparent;
+			font-size: 1.2em;
+			font-family: Arial;
+			width: 201px;
+			margin: 7px 7px 5px 5px;
+		}
+		#sidebar form button {
+			float: left;
+			border: 0;
+			width: 72px; height: 31px;
+			font-size: 0.8em;
+			font-family: Verdana;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #ffffff;
+			background-color: transparent;
+		}
+	#sidebar .twitter {
+		border: 1px solid #CCCCCC;
+		border-top: 0;
+		padding: 5px 5px 5px 50px;
+		margin-bottom: 15px;
+		color: #808080;
+		background: url(images/twitter.gif) no-repeat 8px 10px;
+	}
+		#sidebar .twitter p {
+			line-height: 1.4em;
+			margin-bottom: 8px;
+		}
+		#sidebar .twitter .date {
+			font-style: italic;
+			font-size: 0.9em;
+		}
+/** END sidebar **/
+
+/** BEGIN footer **/
+#footer {
+	clear: both;
+	font-size: 0.9em;
+	border: 1px solid #CCCCCC;
+	padding: 10px 10px 25px;
+	margin-bottom: 20px;
+	color: #808080;
+}
+	#footer a {
+		color: #808080;
+		text-decoration: none;
+	}
+	#footer a:hover {
+		color: #99CCFF;
+		text-decoration: underline;
+	}
+	#footer .l {
+		float: left;
+	}
+	#footer .r {
+		float: right;
+	}
+/** END footer **/
+
+/** BEGIN miscellaneous **/
+#comments {
+	
+}
+	#comments h2 {
+		margin: 20px 0 5px;
+		font-size: 1.8em !important;
+		font-family: Verdana !important;
+	}
+	#comments p {
+		margin-bottom: 10px;
+		line-height: 1.6em;
+	}
+	#comments form {
+		padding-top: 20px;
+	}
+	#comments form p {
+		margin-bottom: 5px;
+	}
+		#comments form input {
+			margin-right: 5px;
+		}
+		#comments form input, textarea {
+			border: 1px solid #cccccc;
+			font-size: 0.9em;
+			font-family: Verdana;
+			padding: 4px;
+			background-position: 4px 4px;
+			background-repeat: no-repeat;
+		}
+		#comments form input {
+			width: 260px;
+			border: 1px solid #cccccc;
+		}
+		#comments form textarea {
+			width: 350px;
+			padding: 4px 4px !important;
+			border: 1px solid #cccccc;
+		}
+		#comments form button {
+			text-indent: -9999px;
+			border: 0;
+			background: url(images/submit2.gif) no-repeat 0 0;
+			width: 150px; height: 34px;
+		}
+	.commentdetails {
+		margin-top: 25px;
+	}
+	.commentauthor {
+		margin-bottom: 5px !important;
+		font-weight: bold;
+	}
+	.commentdate {
+		font-size: 0.8em;
+		margin-bottom: 5px;
+		color: #909090;
+	}
+	.required {
+		color: #ff0000;
+	}
+h2.title {
+	font-size: 1em !important;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+	color: #808080;
+}
+.notfound {
+	padding: 40px;
+}
+	.notfound h2 {
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: 10px;
+	}
+/** END miscellaneous **/
+
+/** BEGIN wordpress 2.7 comments **/
+#comments ol {
+	list-style-type: none;
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+	#comments ol li {
+		padding: 10px;
+		border: 1px solid #e0e0e0;
+		margin-bottom: 10px;
+	}
+	#comments ol li .avatar {
+		float: right;
+	}
+	#comments ol li .comment-author {
+		
+	}
+		#comments ol li .comment-author .fn {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+	#comments ol li .comment-meta {
+		font-size: 0.9em;
+		color: #999999;
+		margin: 5px 0 10px;
+	}
+	#comments ol li .reply {
+		font-size: 0.9em;
+		font-weight: bold;
+		padding-bottom: 10px;
+	}
+	#comments .children {
+		list-style-type: none;
+	}
+#comments .navigation {
+	padding: 10px 0 20px;
+	font-size: 0.9em;
+}
+	#comments .navigation a {
+		color: #999999;
+		padding: 3px 8px;
+		border: 1px solid #cccccc;
+	}
+	#comments .navigation a:hover {
+		color: #000000;
+		border-color: #000000;
+		text-decoration: none;
+	}
+#comments .says {
+	display: none;
+}
+/** END wordpress 2.7 comments **/

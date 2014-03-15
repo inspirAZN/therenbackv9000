@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There and Back</title>
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../stylesheets/styles.css" rel="stylesheet">
+
+
+
+    <!-- mobile stuff -->
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css"/> -->
+    <!--<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script> -->
+</head>
+<body class="transparent">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar champagne_back"></span>
+                <span class="icon-bar champagne_back"></span>
+                <span class="icon-bar champagne_back"></span>
+            </button>
+            <a class="navbar-brand" href="home.html"><span class="glyphicon glyphicon-send champagne"></span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="home/{{_id}}">home</a></li>                
+                <li><a href="moments/{{_id}}">postcards</a></li>
+                <li><a href="mymoments/{{_id}}">my adventures</a></li>
+                <li><a href="favorites/{{_id}}">favorites</a></li>
+ <!--                <li><a href="bank.html">Bank</a></li> -->
+                 <li><a href="account/{{_id}}">my account</a></li>
+<!--                  <li><a href="tutorial.html">help</a></li> -->
+ <!--                <li><a href="tutorial.html">Tutorial</a></li> -->
+<!--                 <li><a href="filler.html">sign out</a></li> -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+{{#each userInfo}}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="container center-block transparent">
+                    <div class="deleteonupload">
+                        <div class="row no_bot_bord">
+                            <h1 class="allura asphault larger-text page-header">camera</h1>
+                        </div>
+                        <div class="row">
+                            <div class="jumbotron champagne_back">
+                                <div class="container">
+                                    <h3>Click the <span class="bluee glyphicon glyphicon-camera"></span> to take a picture
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <form action="/camera/post/{{_id}}" method="post" enctype="multipart/form-data">
+                        <input type="file" capture="camera" accept="image/*" id="cameraInput" name="pic" >
+                        <input type="submit" value="Submit">
+                    </form>
+
+                    
+                    <div class="showOnUpload">
+                        <nav class="navbar navbar-inverse navbar-fixed-bottom filters">
+                            <span class="text-center">&nbsp; Apply a filter!</span>
+
+                            <div class="row">
+                                <div class="grayscale">
+                                    <div id="grayscale">
+                                    </div>
+                                </div>
+                                <div class="sepia">
+                                    <div id="sepia">
+                                    </div>
+                                </div>
+                                <div class="contrast">
+                                    <div id="contrast">
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+                        <div class="container text-center">
+                            <a href="#" id="chooseFile"><span class="glyphicon glyphicon-camera bluee"></span></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+{{/each}}
+
+
+    <!--  background-->
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="../javascripts/bootstrap.js"></script>
+    <script src="../javascripts/jquery-2.0.3.js"></script>
+</body>
+</html>
+

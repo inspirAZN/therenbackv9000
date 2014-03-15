@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There and Back</title>
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../stylesheets/styles.css" rel="stylesheet">
+</head>
+<body class="transparent cardboard-background">
+{{#each userInfo}}
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar champagne_back"></span>
+                <span class="icon-bar champagne_back"></span>
+                <span class="icon-bar champagne_back"></span>
+            </button>
+            <a class="navbar-brand" href="/home"><span class="glyphicon glyphicon-send champagne"></span> MYMOMENTS
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+                <li class="active"><a href="/home/{{_id}}">home</a></li>
+                <li><a href="moments/{{_id}}">postcards</a></li>
+                <li><a href="mymoments/{{_id}}">my adventures</a></li>
+                <li><a href="favorites/{{_id}}">favorites</a></li>
+                <li><a href="/account">my account</a></li>
+                <li><a href="/help">help</a></li>
+                <li><a href="/filler">sign out</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+<span class="pull-right"><small>Hello, {{name}}!</small></span>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="container moments center-block blurr">
+
+                    <!-- Modifiable content here -->
+                    <div class="row no_bot_bord">
+                        <h1 class="allura alizarin page-header">postcards</h1>
+                    </div>
+                    <div id="favorites" class="row">
+                      <div class="description text-center">
+                        {{#favorites}}
+                        <p class="description_content">{{locationName}}</p>
+                        {{/favorites}}
+                      </div>
+                        <div class="heartoverlay here" id="moments{{_id}}">
+                            <!-- <a href="#"><span class="glyphicon glyphicon-heart{{heart}}"></span></a> -->
+                            <a class="alizarin glyphicon glyphicon-heart{{heart}}" href="#"></a>
+                        </div>
+                        <a href="#">
+                           <img class="img-circle round" src="{{imgsrc}}" class="img-responsive img-rounded">
+                        </a>
+                        <!-- {{numPhotos}} photos -->
+                    </div>
+                    <br/>
+
+                    <!-- end modifiable content -->
+
+                    <!-- this can be deleted -->
+                <!-- <div class="more_moments">
+                    <div class="container text-center">
+                        <a href="filler.html">
+                            <h4>More Moments</h4>
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                    </div>
+                </div> -->
+
+                <!-- end "this can be deleted" section -->
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </div>
+</div>
+
+<!--  background-->
+{{/each}}
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../javascripts/bootstrap.js"></script>
+<script src="../javascripts/jquery-2.0.3.js"></script>
+<script>
+    $('div.heartoverlay').click(function(){
+        var curMoment = $(this).attr('id');
+        var momentID
+        console.log(curMoment);
+    })
+</script>
+<!-- <script src="javascripts/populateMoments.js"></script> -->
+
+</body>
+</html>
+

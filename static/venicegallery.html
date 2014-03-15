@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There and Back</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/website.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48994336-1', 'therenback.herokuapp.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body class="transparent">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar champagne_back"></span>
+            <span class="icon-bar champagne_back"></span>
+            <span class="icon-bar champagne_back"></span>
+            </button>
+            <a class="navbar-brand" href="home.html"><span class="glyphicon glyphicon-send champagne"></span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">home</a></li>                
+                <li><a href="moments.html">postcards</a></li>
+                <li><a href="mymoments.html">my adventures</a></li>
+                <li><a href="favorites.html">favorites</a></li>
+ <!--                <li><a href="bank.html">Bank</a></li> -->
+                 <li><a href="account.html">my account</a></li>
+<!--                  <li><a href="tutorial.html">help</a></li> -->
+ <!--                <li><a href="tutorial.html">Tutorial</a></li> -->
+<!--                 <li><a href="filler.html">sign out</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="container asphault">
+                    <div class="row decrease-top-margin decrease-bottom-margin">
+                        <div class="row no_bot_bord asphault">
+                            <h1 class="decrease-bottom-margin allura asphault page-header center">venice</h1>
+                        </div> 
+
+                              <div id="content">
+                                <div class="thumb"> <a href="#imagepop"  data-toggle="modal"><img src="http://i1372.photobucket.com/albums/ag338/joannkimmm/Venice1_zpsfdb2b323.png" alt=""/></a> </div>
+                                  <div class="thumb"> <a href="#imagepop" data-toggle="modal"><img src="http://i1372.photobucket.com/albums/ag338/joannkimmm/Venice3_zps71dc2174.png" alt="" /></a> </div>
+                                  <div class="thumb"> <a href="#imagepop" data-toggle="modal"><img src="http://i1372.photobucket.com/albums/ag338/joannkimmm/Venice4_zpsa95eac27.png" alt="" /></a> </div>
+                                  <div class="thumb"> <a href="#imagepop" data-toggle="modal"><img src="http://i1372.photobucket.com/albums/ag338/joannkimmm/Venice2_zps2fc20119.png" alt="" /></a> </div>
+                                  <div class="thumb"> <a href="#imagepop" data-toggle="modal"><img src="http://i1372.photobucket.com/albums/ag338/joannkimmm/Venice5_zps959e83dc.png" alt="" /></a> </div>
+                                </div>
+                          </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </div>
+</div>
+
+ <!-- Modal Collection -->
+<div class="modal fade" id="imagepop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div id="insert" class="modal-body here">
+        <!-- populate with javascript -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  background -->
+<meta name="viewport" 
+   content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery-2.0.3.js"></script>
+<script src="js/jquery.tinycarousel.js"></script>
+<!-- <script src="js/tab1.js"></script> -->
+<script src="js/jquery.tinycarousel.min.js"></script>
+<script type="text/javascript">
+$(function()
+{
+    $('#slider1').tinycarousel();
+});
+</script>
+
+<script>
+$( document ).ready(function(){
+    $('.thumb').click(function(){
+      // ga('send', 'event', 'gallery', 'Click');
+        // remove previously inserted pictures
+        $('.displayed').remove();
+
+
+        // get the image url of the clicked element
+        var imgsrc = $(this).find('a').find('img').attr('src');
+        console.log(imgsrc);
+
+        // find the modal body
+        var html = "<img class='img-responsive displayed' src='";
+            html += imgsrc;
+            html += "'/>";
+
+        // insert the image to the modal
+        $('#insert').append(html);
+
+         ga('send', 'event', 'gallery', 'Click');
+
+
+    });
+});
+
+</script>
+<!--  
+<script>
+    $('.nav-tabs li').click(function() {
+      var tab = $(this).find('a').attr('href');
+
+      _gaq.push(['_trackEvent', 'Interactions', 'Click', tab]);
+
+    })
+// </script>-->
+
+</body>
+</html>
+
