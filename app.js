@@ -82,6 +82,18 @@ app.get('/account', function(req, res) {
 app.get('/filler', function(req, res) {
 	res.sendfile('./static/filler.html');
 });
+app.get('/newyorkgallery', function(req, res) {
+	res.sendfile('./static/newyorkgallery.html');
+});
+app.get('/boraboragallery', function(req, res) {
+	res.sendfile('./static/boraboragallery.html');
+});
+app.get('/venicegallery', function(req, res) {
+	res.sendfile('./static/venicegallery.html');
+});
+app.get('/shinjukugallery', function(req, res) {
+	res.sendfile('./static/shinjukugallery.html');
+});
 
 
 app.get('/', function(req, res) {
