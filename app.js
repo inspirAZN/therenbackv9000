@@ -64,6 +64,9 @@ app.get('/camera', function(req, res) {
 app.get('/help', function(req, res) {
 	res.sendfile('./static/help.html');
 });
+app.get('/changepass', function(req, res) {
+	res.sendfile('./static/changepass.html');
+});
 app.get('/sethome', function(req, res) {
 	res.sendfile('./static/sethome.html');
 });
@@ -75,6 +78,9 @@ app.get('/mymoments', function(req, res) {
 });
 app.get('/bank', function(req, res) {
 	res.sendfile('./static/bank.html');
+});
+app.get('/favorites', function(req, res) {
+	res.sendfile('./static/favorites.html');
 });
 app.get('/account', function(req, res) {
 	res.sendfile('./static/account.html');
