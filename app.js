@@ -21,7 +21,7 @@ var camera = require('./routes/camera');
 
 // Database
 var mongo = require('mongoskin');
-var db = mongo.db("mongodb://localhost:27017/users", {native_parser:true});
+var db = mongo.db("mongodb://heroku_app23037828:68kgghftm0n68p1q20rflj7h46@ds033679.mongolab.com:33679/heroku_app23037828/users", {native_parser:true});
 
 
 var app = express();
