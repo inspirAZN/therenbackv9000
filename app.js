@@ -70,7 +70,7 @@ app.get('/sethome', function(req, res) {
 app.get('/moments', function(req, res) {
 	res.sendfile('./static/moments.html');
 });
-app.get('/mymonets', function(req, res) {
+app.get('/mymoments', function(req, res) {
 	res.sendfile('./static/mymoments.html');
 });
 app.get('/bank', function(req, res) {
